@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crav'n - Let's Eat!</title>
+</head>
+
+<body>
+    <div class="background">
+
+        <div class="title">
+            <div class="jumbotron">
+                <h1>Crav'n</h1>
+            </div>
+        </div>
+
+        <!--Main content body-->
+        <div class="content">
+            <div class="stage1">
+                <div class="row1" id="welcomeContent">
+                    <p class="description">Craving something? Enter to learn more.</p>
+                    <button class="enter" class="btn btn-primary btn-large">Enter</button>
+                </div>
+            </div>
+
+            <div class="stage2">
+                <div class="row1" id="searchField">
+                    <form id="searchForm" class="form" role="form">
+
+                        <div class="form-group">
+                            <label for="searchField"></label>
+                            <input type="text" name="search" placeholder="I am craving...">
+                        </div>
+
+                        <div class="checkbox">
+                            <label class="checkbox"><input type="checkbox" name="searchRestaurants" value="true">Restaurants</label>
+                            <label class="checkbox"><input type="checkbox" name="searchRecipes" value="true">Recipes</label>
+                            <input id="submitButton" type="submit" class="btn btn-primary" disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="stage3">
+                <div class="row2" id="searchResults">
+                    <div id="restaurantWrapper" div style="display:none;" class="animate-bottom resultWrapper col-md-5">
+                        <div class="restaurantResults "></div>
+                    </div>
+
+                    <div id="recipeWrapper" div style="display:none;" class="animate-bottom resultWrapper col-md-5">
+                        <div class="recipeResults"></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+        <script type="text/javascript" src="assets/javascript/api.js"></script>
+        <script type="text/javascript" src="assets/javascript/UI.js"></script>
+</body>

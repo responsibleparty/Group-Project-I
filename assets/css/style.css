@@ -71,5 +71,8 @@ input[type=text] {
 input[type=text]:focus {
     width: 40%;
 }
+img{
+    width: 200px;
+}
 
 

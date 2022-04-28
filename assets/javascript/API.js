@@ -5,10 +5,10 @@ var endpointUrl = "https://api.yelp.com/v3/businesses/search";
 var fullUrl = corsProxy + endpointUrl;
 
 // API key
-var apiKey = 'A6gmtllBxdAgu_ikQkG56eG9de48BNQVoLuwbxlnVlA-qySFfFokZCkAipK930RvAJF3NdjErxOOTVb2FoIvvW-_3NMsQyPhE6kpOUlvy8TVaUDw-VNvVFVMRlZBXHYx';
+var apiKey = 'pM3Hc2J0eVLLSlyBfyfK9rFeu7lE_23qlvFVja0Z4r_GZhRvmIRgRmrtkCWY3eNzJux4DOFiBffzc55p89TLHL2kP2OuPtYyLVVhotk2yim6aYIfvJd0Ol_4CFpnYnYx';
 
-// GET parameters to include
-/*var params = {
+// GET Parameters To Include
+var params = {
     term: "food",
     location: "San Diego"
 };
@@ -22,7 +22,7 @@ var yelpRating = "";
 var yelpImageUrl = "";
 
 var userInput = "";
-*/
+
 
 // Make API request for Yelp
 function yelpSearch(params){
@@ -41,10 +41,10 @@ function yelpSearch(params){
 // API for Recipe Puppy
 function recipeSearch(searchTerm){
         
-    var baseURL = "http://www.recipepuppy.com/api/?q=";
+    var baseURL = "https://api.yummly.com/v1";
 
     //Complete URl with parameter
-    var dogFullUrl = corsProxy + baseURL + searchTerm;
+    var dogFullUrl =  baseURL + searchTerm;
     
     var dogTitle = "" ;
     var ingredients = "" ;

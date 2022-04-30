@@ -85,9 +85,9 @@ function displayRecipeData(results){
         var string = `
         <div class="card text-center">
             <div class="card-body">
-                <a href=${results[x].href}> ${results[x].title}</a>
+                <a href=${results[x].recipe.url}> ${results[x].recipe.label}</a>
                 <h3 class= "descriptor"></h3>
-                <p id="recipeTitles" class="card-text">${results[x].ingredients}</p>
+                <p id="recipeTitles" class="card-text">${results[x].recipe.cautions}</p>
             </div>
         </div>
         `
@@ -105,11 +105,19 @@ $("#searchForm").submit(function (event) {
 
     if (formData.searchRecipes) {
         recipeSearch(formData.search).then(function (response) {
-            var recipeResults = JSON.parse(response);
-            console.log(recipeResults.results);
-            apiData.recipePuppy = recipeResults.results;
+            console.log(response);
+            if(response.ok) {
+                return response.json();
+            } else {
+                alert('Error: ' + response.statusText);
+                return
+            }
+        })
+        .then((data) => {
+            console.log("data_recipe: ", data);
+            apiData.recipePuppy = data.hits;
             $("#recipeWrapper").show();
-            displayRecipeData(recipeResults.results);
+            displayRecipeData(data.hits);
         })
 
     }

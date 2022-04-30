@@ -88,6 +88,7 @@ function displayRecipeData(results){
                 <a href=${results[x].recipe.url}> ${results[x].recipe.label}</a>
                 <h3 class= "descriptor"></h3>
                 <p id="recipeTitles" class="card-text">${results[x].recipe.cautions}</p>
+                <img src="${results[x].recipe.image}">
             </div>
         </div>
         `

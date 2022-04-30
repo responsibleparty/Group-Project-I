@@ -40,8 +40,8 @@ function yelpSearch(params){
 
 // API for Recipe Puppy
 function recipeSearch(searchTerm){
-    var edamamApiKey ="41a4f6322542f18a7ffbe28cb639d278";
-    var edamamApiID = "d1ebf186";
+    var edamamApiKey ="aced0dfaf1234951342321e11d76575d";
+    var edamamApiID = "16592fbb";
         
   
     var baseURL = `https://api.edamam.com/search?app_id=${edamamApiID}&app_key=${edamamApiKey}&q=`;
@@ -49,15 +49,6 @@ function recipeSearch(searchTerm){
     //Complete URl with parameter
     var dogFullUrl = baseURL + searchTerm;
 
-    var baseURL = "https://api.yummly.com/v1";
-
-    //Complete URl with parameter
-    var dogFullUrl =  baseURL + searchTerm;
-
-    
-    var dogTitle = "" ;
-    var ingredients = "" ;
-    var link = "" ;
 
     //Make ajax call
     return fetch(dogFullUrl)

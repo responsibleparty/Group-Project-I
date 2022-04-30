@@ -68,6 +68,7 @@ function displayRestaurantData(results){
             <div class="card-body">
                 <a href=${results[x].url}> ${results[x].name}</a> ${results[x].rating}/5
                 <p id="restaurantInfo" class="card-text">${results[x].location.display_address}</p>
+                <img src="${results[x].image_url}">
             </div>
         </div>
         `

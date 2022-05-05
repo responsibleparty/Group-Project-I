@@ -10,7 +10,7 @@ var apiKey = 'pM3Hc2J0eVLLSlyBfyfK9rFeu7lE_23qlvFVja0Z4r_GZhRvmIRgRmrtkCWY3eNzJu
 // GET Parameters To Include
 var params = {
     term: "food",
-    location: "San Diego"
+    location: ""
 };
 
 var yelpName = ""
@@ -38,7 +38,6 @@ function yelpSearch(params){
 }
 
 
-// API for Recipe Puppy
 function recipeSearch(searchTerm){
     var edamamApiKey ="aced0dfaf1234951342321e11d76575d";
     var edamamApiID = "16592fbb";

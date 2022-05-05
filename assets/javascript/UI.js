@@ -63,15 +63,17 @@ function initializeStage3() {
 
 function displayRestaurantData(results){
     for(var x = 0; x < 5; x++){
-        var string = `
-        <div class="card text-center">
-            <div class="card-body">
-                <a href=${results[x].url}> ${results[x].name}</a> ${results[x].rating}/5
-                <p id="restaurantInfo" class="card-text">${results[x].location.display_address}</p>
-                <img src="${results[x].image_url}">
-            </div>
+        var string =`
+        <div class="resultCard">
+        <img src="${results[x].image_url}" alt="${results[x].name}">
+        <h5 class="card-title">${results[x].name}</h5>
+        <p><b>Rating:</b> ${results[x].rating}/5</p>
+        <p class="card-text"><b>Phone:</b>${results[x].display_phone} </p>
+        <a href="${results[x].url}" class="btn btn-primary">Let's Go!</a>
+        </div>
         </div>
         `
+
         // var $el = $()
         // $el.find("#restaurantName").html('<div>'+results[x].name+'</div>');
         // $el.find("#restaurantInfo").html('<div>'+results[x].location.display_address+'</div>')
@@ -82,17 +84,17 @@ function displayRestaurantData(results){
 function displayRecipeData(results){
     for(var x = 0; x < 5; x++){
 
-        var string = `
-        <div class="card text-center">
-            <div class="card-body">
-                <a href=${results[x].recipe.url}> ${results[x].recipe.label}</a>
-                <h3 class= "descriptor"></h3>
-                <p id="recipeTitles" class="card-text">${results[x].recipe.cautions}</p>
-                <img src="${results[x].recipe.image}">
-            </div>
+        var string =`
+        <div class = "resultCard">
+        <img src="${results[x].recipe.image}" alt="${results[x].recipe.label}">
+        <h5 class="card-title"><b>${results[x].recipe.label}</b></h5>
+        <p class="card-text"><b>Allergens:</b> ${results[x].recipe.cautions}</p>
+        <p class="card-text"><b>Total Time:</b> ${results[x].recipe.totalTime} minutes</p>
+        <a href="${results[x].recipe.url}" class="btn btn-primary">Let's Go!</a>
+        </div>
         </div>
         `
-        console.log(string);
+
         $('.recipeResults').append(string)
         //$("#recipeTitle").html('<div>'+results[x].title+'</div>');
         //$("#ingredients").html('<div>'+results[x].ingredients+'</div>');
@@ -106,7 +108,7 @@ $("#searchForm").submit(function (event) {
 
     if (formData.searchRecipes) {
         recipeSearch(formData.search).then(function (response) {
-            console.log(response);
+            //console.log(response);
             if(response.ok) {
                 return response.json();
             } else {
@@ -115,7 +117,8 @@ $("#searchForm").submit(function (event) {
             }
         })
         .then((data) => {
-            console.log("data_recipe: ", data);
+            //console.log("data_recipe: ", data);
+            console.log(data);
             apiData.recipePuppy = data.hits;
             $("#recipeWrapper").show();
             displayRecipeData(data.hits);

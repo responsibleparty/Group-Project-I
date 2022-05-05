@@ -20,25 +20,7 @@ h1{
     padding-bottom: 0;
     margin-bottom: 0;
 }
-.row1{
-    text-align: center;
-}
-.row2{
-    display: flex;
-    justify-content: center;
-}
-.content{
 
-    padding-top:0;
-    padding-bottom: 25px;
-}
-.card{
-    margin-bottom: 5px;
-}
-#searchResults{
-    column-count: 2;
-    column-fill: balance;
-}
 button{
     color: #fff;
     background-color: #0069d9;
@@ -71,8 +53,43 @@ input[type=text] {
 input[type=text]:focus {
     width: 40%;
 }
-img{
-    width: 200px;
+
+#welcomeContent{
+    text-align: center;
+}
+#searchField{
+    text-align: center;
 }
 
+img{
+    width: 300px;
+    height: 300px;
+}
 
+.resultCard{
+    background-color: #CBCED3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 5px 10px #95A766;
+}
+
+.searchResults{
+    display: flex;
+    justify-content: end;
+}
+.resultCard{
+    margin: 50px;
+}
+.recipeResults{
+    position: relative;
+    margin-left: -140px;
+}
+.restaurantResults{
+    position: relative;
+    margin-left: 50px;
+}
